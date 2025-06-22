@@ -188,101 +188,7 @@ window.addEventListener("resize", () => {
 //Create all the categories, when a category is clicked dynamically create all the corresponding options
 //by loading images from the current category folder and checking if the image exists
 //if the image exists, create a new option li
-categories.forEach((cat, index) => {
-  cat.addEventListener("click", (cat) => {
-    //add animation
-    cat.target.style.transform = "scale(1.05)";
-    setTimeout(() => {
-      cat.target.style.transform = "scale(1)";
-    }, 200);
-    // make sure my options element is visisble again
-    options.parentElement.style.visibility = "visible";
 
-    // remove clickedCategory on each item, and add on the last clicked item
-    categories.forEach((category) => {
-      category.classList.remove("clickedCategory");
-    });
-    cat.target.classList.add("clickedCategory");
-    currentCategory = cat.target.innerText;
-
-    // this will empty my options so previous loaded options will be removed
-    options.innerHTML = "";
-
-    for (let index = 0; index < 10; index++) {
-      var img = new Image();
-      img.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
-
-      img.onload = () => {
-        var option = document.createElement("li");
-        var image = document.createElement("img");
-        image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
-
-        //if (currentDoll.hasOption(currentCategory, image)) {
-          option.classList.add("clickedOption");
-       // }
-        option.appendChild(image);
-
-        //add click listener on option.firstchild so the li isn't accidentally clicked
-        option.firstChild.addEventListener("click", (clickedOption) => {
-          //add animation
-          option.style.transform = "scale(1.05)";
-          setTimeout(() => {
-            option.style.transform = "scale(1)";
-          }, 200);
-
-          if (
-            clickedOption.target.parentNode.classList.contains("clickedOption")
-          ) {
-            //Option is already selected, remove it
-
-            clickedOption.target.parentNode.classList.remove("clickedOption");
-            removeOption = new Option(currentCategory, clickedOption.target);
-            currentDoll.removeOption(removeOption);
-            currentDoll.draw();
-          } else {
-            // Select a new option
-
-            //If toggleMultiselect is false we first remove all the other options and then add the new option
-            if (toggleMultiselect) {
-              clickedOption.target.parentNode.classList.remove("clickedOption");
-
-              // clickedOption.target should show my image src but is not ideal
-              // and should be replaced with something else, when title is clicked
-              // => error
-              var newOption = new Option(currentCategory, clickedOption.target);
-              currentDoll.addOption(newOption);
-
-            } else {
-              //remove all the previous options in the ui
-              var optionsArray = [...options.children];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove("clickedOption");
-              });
-
-              //remove all the previous options in the doll object because we can only select 1
-              currentDoll.removeAllOptionsFromCategory(currentCategory);
-
-              //add the new clicked option in the ui
-              clickedOption.target.parentNode.classList.add("clickedOption");
-
-              //add the new clicked option in the doll object
-              var newOption = new Option(currentCategory, clickedOption.target);
-              currentDoll.addOption(newOption);
-            }
-
-            currentDoll.draw();
-          }
-        });
-        options.appendChild(option);
-      };
-    }
-  });
-
-  //Automatically click on the first category so this category options is shown on screen
-  if (index == 0) {
-    cat.click();
-  }
-});
 
 //Export the canvas to an image
 exportCanvasBtn.addEventListener("click", () => exportCanvas());
@@ -515,3 +421,99 @@ function swapItems(fromIndex, toIndex) {
 
 
 }
+
+categories.forEach( ( cat, index ) => {
+  cat.addEventListener( "click", ( cat ) => {
+    //add animation
+    cat.target.style.transform = "scale(1.05)";
+    setTimeout( () => {
+      cat.target.style.transform = "scale(1)";
+    }, 200 );
+    // make sure my options element is visisble again
+    options.parentElement.style.visibility = "visible";
+
+    // remove clickedCategory on each item, and add on the last clicked item
+    categories.forEach( ( category ) => {
+      category.classList.remove( "clickedCategory" );
+    } );
+    cat.target.classList.add( "clickedCategory" );
+    currentCategory = cat.target.innerText;
+
+    // this will empty my options so previous loaded options will be removed
+    options.innerHTML = "";
+
+    for ( let index = 0; index < 10; index++ ) {
+      var img = new Image();
+      img.src = `./images/${ currentCategory.toLowerCase() }/${ index }.png`;
+
+      img.onload = () => {
+        var option = document.createElement( "li" );
+        var image = document.createElement( "img" );
+        image.src = `./images/${ currentCategory.toLowerCase() }/${ index }.png`;
+
+        if ( currentDoll.hasOption( currentCategory, image ) ) {
+          option.classList.add( "clickedOption" );
+        }
+        option.appendChild( image );
+
+        //add click listener on option.firstchild so the li isn't accidentally clicked
+        option.firstChild.addEventListener( "click", ( clickedOption ) => {
+          //add animation
+          option.style.transform = "scale(1.05)";
+          setTimeout( () => {
+            option.style.transform = "scale(1)";
+          }, 200 );
+
+          if (
+            clickedOption.target.parentNode.classList.contains( "clickedOption" )
+          ) {
+            //Option is already selected, remove it
+
+            clickedOption.target.parentNode.classList.remove( "clickedOption" );
+            removeOption = new Option( currentCategory, clickedOption.target );
+            currentDoll.removeOption( removeOption );
+            currentDoll.draw();
+          } else {
+            // Select a new option
+
+            //If toggleMultiselect is false we first remove all the other options and then add the new option
+            if ( toggleMultiselect ) {
+              clickedOption.target.parentNode.classList.remove( "clickedOption" );
+
+              // clickedOption.target should show my image src but is not ideal
+              // and should be replaced with something else, when title is clicked
+              // => error
+              var newOption = new Option( currentCategory, clickedOption.target );
+              currentDoll.addOption( newOption );
+
+            } else {
+              //remove all the previous options in the ui
+              var optionsArray = [ ...options.children ];
+              optionsArray.forEach( ( option ) => {
+                option.classList.remove( "clickedOption" );
+              } );
+
+              //remove all the previous options in the doll object because we can only select 1
+              currentDoll.removeAllOptionsFromCategory( currentCategory );
+
+              //add the new clicked option in the ui
+              clickedOption.target.parentNode.classList.add( "clickedOption" );
+
+              //add the new clicked option in the doll object
+              var newOption = new Option( currentCategory, clickedOption.target );
+              currentDoll.addOption( newOption );
+            }
+
+            currentDoll.draw();
+          }
+        } );
+        options.appendChild( option );
+      };
+    }
+  } );
+
+  //Automatically click on the first category so this category options is shown on screen
+  if ( index == 0 ) {
+    cat.click();
+  }
+} );
