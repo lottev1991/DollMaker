@@ -375,7 +375,7 @@ function loadDolls() {
       var optionsArray = [...options.children];
       optionsArray.forEach((opt) => {
         //if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
-          opt.classList.add("clickedOption");
+          opt.classList.toggle("clickedOption");
         //} else {
         //  opt.classList.remove("clickedOption");
         //}
