@@ -374,7 +374,7 @@ function loadDolls () {
         if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
           opt.classList.add( "clickedOption" );
         } else {
-          opt.classList.toggle( "clickedOption" );
+          opt.classList.remove( "clickedOption" );
         }
       } );
 
