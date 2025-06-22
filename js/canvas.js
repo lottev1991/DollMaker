@@ -191,10 +191,10 @@ window.addEventListener("resize", () => {
 categories.forEach((cat, index) => {
   cat.addEventListener("click", (cat) => {
     //add animation
-    cat.target.style.transform = "scale(1.05)";
-    setTimeout(() => {
-      cat.target.style.transform = "scale(1)";
-    }, 200);
+    // cat.target.style.transform = "scale(1.05)";
+    // setTimeout(() => {
+    //   cat.target.style.transform = "scale(1)";
+    // }, 200);
     // make sure my options element is visisble again
     options.parentElement.style.visibility = "visible";
 
@@ -225,10 +225,10 @@ categories.forEach((cat, index) => {
         //add click listener on option.firstchild so the li isn't accidentally clicked
         option.firstChild.addEventListener("click", (clickedOption) => {
           //add animation
-          option.style.transform = "scale(1.05)";
-          setTimeout(() => {
-            option.style.transform = "scale(1)";
-          }, 200);
+          // option.style.transform = "scale(1.05)";
+          // setTimeout(() => {
+          //   option.style.transform = "scale(1)";
+          // }, 200);
 
           if (
             clickedOption.target.parentNode.classList.contains("clickedOption")
@@ -288,10 +288,10 @@ categories.forEach((cat, index) => {
 exportCanvasBtn.addEventListener("click", () => exportCanvas());
 function exportCanvas() {
   //add animation
-  exportCanvasBtn.style.transform = "scale(1.05)";
-  setTimeout(() => {
-    exportCanvasBtn.style.transform = "scale(1)";
-  }, 200);
+  // exportCanvasBtn.style.transform = "scale(1.05)";
+  // setTimeout(() => {
+  //   exportCanvasBtn.style.transform = "scale(1)";
+  // }, 200);
 
   //this will export the canvas to a Data URl that can be downloaded
   canvasDataURL = canvas.toDataURL("png", 1.0);
@@ -307,10 +307,10 @@ function exportCanvas() {
 
 toggleMultiselectBtn.addEventListener("click", () => {
   //add animation
-  toggleMultiselectBtn.style.transform = "scale(1.05)";
-  setTimeout(() => {
-    toggleMultiselectBtn.style.transform = "scale(1)";
-  }, 200);
+  // toggleMultiselectBtn.style.transform = "scale(1.05)";
+  // setTimeout(() => {
+  //   toggleMultiselectBtn.style.transform = "scale(1)";
+  // }, 200);
   toggleMultiselectBtn.classList.toggle("active");
 
   if (toggleMultiselectBtn.classList.contains("active")) {
@@ -356,10 +356,10 @@ function loadDolls() {
 
     dollOption.addEventListener("click", (clickedDoll) => {
       //add animation
-      dollOption.style.transform = "scale(1.05)";
-      setTimeout(() => {
-        dollOption.style.transform = "scale(1)";
-      }, 200);
+      // dollOption.style.transform = "scale(1.05)";
+      // setTimeout(() => {
+      //   dollOption.style.transform = "scale(1)";
+      // }, 200);
       setTimeout(() => {
         // Close modal
         modal.style.display = "none";
