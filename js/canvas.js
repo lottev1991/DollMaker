@@ -194,9 +194,9 @@ categories.forEach((cat, index) => {
   cat.addEventListener("click", (cat, e) => {
     //add animation
     cat.target.style.transform = "scale(1.05)";
-    // setTimeout(() => {
-    //   cat.target.style.transform = "scale(1)";
-    // }, 200);
+    setTimeout(() => {
+      cat.target.style.transform = "scale(1)";
+    }, 200);
     // make sure my options element is visisble again
     options.parentElement.style.visibility = "visible";
 
@@ -228,9 +228,9 @@ categories.forEach((cat, index) => {
         option.firstChild.addEventListener("click", (clickedOption) => {
           //add animation
           option.style.transform = "scale(1.05)";
-          // setTimeout(() => {
-          //   option.style.transform = "scale(1)";
-          // }, 200);
+          setTimeout(() => {
+            option.style.transform = "scale(1)";
+          }, 200);
 
           if (
             clickedOption.target.parentNode.classList.contains("clickedOption")
@@ -293,9 +293,9 @@ exportCanvasBtn.addEventListener("click", () => exportCanvas());
 function exportCanvas() {
   //add animation
   exportCanvasBtn.style.transform = "scale(1.05)";
-  // setTimeout(() => {
-  //   exportCanvasBtn.style.transform = "scale(1)";
-  // }, 200);
+  setTimeout(() => {
+    exportCanvasBtn.style.transform = "scale(1)";
+  }, 200);
 
   //this will export the canvas to a Data URl that can be downloaded
   canvasDataURL = canvas.toDataURL("png", 1.0);
@@ -312,9 +312,9 @@ function exportCanvas() {
 toggleMultiselectBtn.addEventListener("click", (e) => {
   //add animation
   toggleMultiselectBtn.style.transform = "scale(1.05)";
-  // setTimeout(() => {
-  //   toggleMultiselectBtn.style.transform = "scale(1)";
-  // }, 200);
+  setTimeout(() => {
+    toggleMultiselectBtn.style.transform = "scale(1)";
+  }, 200);
   toggleMultiselectBtn.classList.toggle("active");
 
   if (toggleMultiselectBtn.classList.contains("active")) {
@@ -363,13 +363,13 @@ function loadDolls(e) {
     dollOption.addEventListener("click", (clickedDoll) => {
       //add animation
       dollOption.style.transform = "scale(1.05)";
-      // setTimeout(() => {
-      //   dollOption.style.transform = "scale(1)";
-      // }, 200);
-      //setTimeout(() => {
+      setTimeout(() => {
+        dollOption.style.transform = "scale(1)";
+      }, 200);
+      setTimeout(() => {
         // Close modal
         modal.style.display = "none";
-      //}, 400);
+      }, 400);
 
       //switch doll
       currentDoll = dolls[index];
@@ -401,9 +401,9 @@ saveDollsBtn.addEventListener("click", () => {
 
   saveDollsBtn.innerText = "Dolls succesfully saved!";
 
-  // setTimeout(() => {
+  setTimeout(() => {
     saveDollsBtn.innerText = "Save Dolls";
-  // }, 3000);
+  }, 3000);
 });
 
 function removeDollsUlChildren() {
