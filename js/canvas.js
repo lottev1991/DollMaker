@@ -235,7 +235,7 @@ categories.forEach((cat, index) => {
           ) {
             //Option is already selected, remove it
 
-            clickedOption.target.parentNode.classList.remove("clickedOption");
+            //clickedOption.target.parentNode.classList.remove("clickedOption");
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
@@ -244,7 +244,7 @@ categories.forEach((cat, index) => {
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if (toggleMultiselect) {
-              clickedOption.target.parentNode.classList.remove("clickedOption");
+              //clickedOption.target.parentNode.classList.remove("clickedOption");
 
               // clickedOption.target should show my image src but is not ideal
               // and should be replaced with something else, when title is clicked
@@ -255,9 +255,9 @@ categories.forEach((cat, index) => {
             } else {
               //remove all the previous options in the ui
               var optionsArray = [...options.children];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove("clickedOption");
-              });
+             // optionsArray.forEach( ( option ) => {
+              //  option.classList.remove("clickedOption");
+              //});
 
               //remove all the previous options in the doll object because we can only select 1
               currentDoll.removeAllOptionsFromCategory(currentCategory);
@@ -321,9 +321,9 @@ toggleMultiselectBtn.addEventListener("click", () => {
     //clear all the previous selected elements
     //remove all the previous options in the ui
     var optionsArray = [...options.children];
-    optionsArray.forEach((option) => {
-      option.classList.remove("clickedOption");
-    });
+    //optionsArray.forEach((option) => {
+    //  option.classList.remove("clickedOption");
+    //});
 
     //remove all the previous options in the doll object
     currentDoll.removeAllOptionsFromCategory(currentCategory);
@@ -417,9 +417,9 @@ createNewDollCard.addEventListener("click", () => {
 
   //clear the selected options in the ui
   var optionsArray = [...options.children];
-  optionsArray.forEach((opt) => {
-    opt.classList.remove("clickedOption");
-  });
+  //optionsArray.forEach((opt) => {
+   // opt.classList.remove("clickedOption");
+  //});
 
   //clear the applied options
   renderAppliedOptionsList()
