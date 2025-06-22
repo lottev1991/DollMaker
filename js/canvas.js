@@ -218,7 +218,7 @@ categories.forEach((cat, index) => {
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
         if (currentDoll.hasOption(currentCategory, image)) {
-          option.classList.toggle("clickedOption");
+          option.classList.add("clickedOption");
         }
         option.appendChild(image);
 
@@ -375,9 +375,9 @@ function loadDolls() {
       var optionsArray = [...options.children];
       optionsArray.forEach((opt) => {
         if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
-          opt.classList.toggle("clickedOption");
+          opt.classList.add("clickedOption");
         } else {
-          opt.classList.remove("clickedOption");
+          opt.classList.toggle("clickedOption");
         }
       });
 
