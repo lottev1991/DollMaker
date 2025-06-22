@@ -217,9 +217,9 @@ categories.forEach((cat, index) => {
         var image = document.createElement("img");
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
-        if (currentDoll.hasOption(currentCategory, image)) {
+        //if (currentDoll.hasOption(currentCategory, image)) {
           option.classList.add("clickedOption");
-        }
+       // }
         option.appendChild(image);
 
         //add click listener on option.firstchild so the li isn't accidentally clicked
@@ -374,11 +374,11 @@ function loadDolls() {
       //clear the selected options in the ui and select the options in the currentdoll
       var optionsArray = [...options.children];
       optionsArray.forEach((opt) => {
-        //if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
-          opt.classList.toggle("clickedOption");
-        //} else {
-        //  opt.classList.remove("clickedOption");
-        //}
+        if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
+          opt.classList.add("clickedOption");
+        } else {
+          opt.classList.remove("clickedOption");
+        }
       });
 
       //clear the applied options
