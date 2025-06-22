@@ -256,7 +256,7 @@ categories.forEach((cat, index) => {
               //remove all the previous options in the ui
               var optionsArray = [...options.children];
               optionsArray.forEach((option) => {
-                option.classList.remove( "clickedOption" );
+                //option.classList.remove( "clickedOption" );
                 if ( currentDoll.hasOption( currentCategory, option.firstChild ) ) {
                   option.classList.add( "clickedOption" );
                 }
@@ -325,7 +325,7 @@ toggleMultiselectBtn.addEventListener("click", () => {
     //remove all the previous options in the ui
     var optionsArray = [...options.children];
     optionsArray.forEach((option) => {
-      option.classList.remove( "clickedOption" );
+      //option.classList.remove( "clickedOption" );
       if ( currentDoll.hasOption( currentCategory, option.firstChild ) ) {
         option.classList.add( "clickedOption" );
       }
@@ -424,7 +424,7 @@ createNewDollCard.addEventListener("click", () => {
   //clear the selected options in the ui
   var optionsArray = [...options.children];
   optionsArray.forEach((opt) => {
-    opt.classList.remove( "clickedOption" );
+    //opt.classList.remove( "clickedOption" );
     if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
       opt.classList.add( "clickedOption" );
     }
