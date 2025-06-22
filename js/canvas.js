@@ -223,7 +223,7 @@ categories.forEach((cat, index) => {
         option.appendChild(image);
 
         //add click listener on option.firstchild so the li isn't accidentally clicked
-        option.firstChild.addEventListener("click", (clickedOption) => {
+        option.firstChild.addEventListener("mousedown", (clickedOption) => {
           //add animation
           // option.style.transform = "scale(1.05)";
           // setTimeout(() => {
@@ -354,7 +354,7 @@ function loadDolls() {
 
     dollOption.appendChild(image);
 
-    dollOption.addEventListener("click", (clickedDoll) => {
+    dollOption.addEventListener("mousedown", (clickedDoll) => {
       //add animation
       // dollOption.style.transform = "scale(1.05)";
       // setTimeout(() => {
