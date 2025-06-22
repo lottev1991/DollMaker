@@ -154,7 +154,7 @@ if (localStorage.getItem("dolls")) {
   dolls.push(currentDoll);
 }
 
-window.addEventListener("load", (e) => {
+window.addEventListener("load", () => {
   // resize the canvas: when small screen enlarge the height so the legs fit the canvas
   // if (window.innerHeight < 600) {
   //   canvas.height = window.innerHeight * 0.85;
@@ -165,11 +165,10 @@ window.addEventListener("load", (e) => {
   canvas.width = "400";
 
   currentDoll?.draw();
-  e.preventDefault();
 });
 
 // when resizing the browser window, resize the canvas
-window.addEventListener("resize", (e) => {
+window.addEventListener("resize", () => {
   // if (window.innerHeight < 750) {
   //   canvas.height = window.innerHeight * 0.85;
   // } else {
@@ -184,14 +183,13 @@ window.addEventListener("resize", (e) => {
   canvas.height = "500";
   canvas.width = "400";
   currentDoll?.draw();
-  e.preventDefault();
 });
 
 //Create all the categories, when a category is clicked dynamically create all the corresponding options
 //by loading images from the current category folder and checking if the image exists
 //if the image exists, create a new option li
 categories.forEach((cat, index) => {
-  cat.addEventListener("click", (cat, e) => {
+  cat.addEventListener("click", (cat) => {
     //add animation
     cat.target.style.transform = "scale(1.05)";
     setTimeout(() => {
@@ -241,7 +239,6 @@ categories.forEach((cat, index) => {
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
-            e.preventDefault();
           } else {
             // Select a new option
 
@@ -274,7 +271,6 @@ categories.forEach((cat, index) => {
             }
 
             currentDoll.draw();
-            e.preventDefault();
           }
         });
         options.appendChild(option);
@@ -309,7 +305,7 @@ function exportCanvas() {
   link.click();
 }
 
-toggleMultiselectBtn.addEventListener("click", (e) => {
+toggleMultiselectBtn.addEventListener("click", () => {
   //add animation
   toggleMultiselectBtn.style.transform = "scale(1.05)";
   setTimeout(() => {
@@ -333,8 +329,6 @@ toggleMultiselectBtn.addEventListener("click", (e) => {
     currentDoll.removeAllOptionsFromCategory(currentCategory);
 
     currentDoll.draw();
-    e.preventDefault();
-
   }
 });
 
@@ -352,7 +346,7 @@ switchDollBtn.addEventListener("click", () => {
   loadDolls();
 });
 
-function loadDolls(e) {
+function loadDolls() {
   dolls.forEach((d, index) => {
     var dollOption = document.createElement("li");
     var image = document.createElement("img");
@@ -376,7 +370,6 @@ function loadDolls(e) {
 
       //re draw the current doll
       currentDoll.draw();
-      e.preventDefault();
 
       //clear the selected options in the ui and select the options in the currentdoll
       var optionsArray = [...options.children];
@@ -412,7 +405,7 @@ function removeDollsUlChildren() {
   }
 }
 
-createNewDollCard.addEventListener("click", (e) => {
+createNewDollCard.addEventListener("click", () => {
   // Close modal
   modal.style.display = "none";
 
@@ -421,7 +414,6 @@ createNewDollCard.addEventListener("click", (e) => {
 
   //re draw the current doll
   currentDoll.draw();
-  e.preventDefault();
 
   //clear the selected options in the ui
   var optionsArray = [...options.children];
@@ -504,7 +496,7 @@ function dragLeave() {
   this.classList.remove('dragover');
 }
 
-function swapItems(fromIndex, toIndex, e) {
+function swapItems(fromIndex, toIndex) {
   //swap items in the doll
   const item = currentDoll.options[toIndex]
   currentDoll.options[toIndex] = currentDoll.options[fromIndex]
@@ -512,7 +504,6 @@ function swapItems(fromIndex, toIndex, e) {
 
   //re-draw the newly ordered currentdoll options
   currentDoll.draw();
-  e.preventDefault();
   //re-render the currentdoll options in the draggable list
   //renderAppliedOptionsList()
   //OR
