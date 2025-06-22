@@ -444,3 +444,11 @@
     font-size: 12px;
   }
 }
+
+.transform-before {
+  transform: scale(1.05);
+}
+
+.transform-after {
+  transform: scale(1);
+}
