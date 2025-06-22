@@ -217,9 +217,9 @@ categories.forEach((cat, index) => {
         var image = document.createElement("img");
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
-        if (currentDoll.hasOption(currentCategory, image)) {
+        //if (currentDoll.hasOption(currentCategory, image)) {
           option.classList.add("clickedOption");
-        }
+        //}
         option.appendChild(image);
 
         //add click listener on option.firstchild so the li isn't accidentally clicked
