@@ -368,9 +368,6 @@ function loadDolls () {
       //switch doll
       currentDoll = dolls[ index ];
 
-      //re draw the current doll
-      currentDoll.draw();
-
       //clear the selected options in the ui and select the options in the currentdoll
       var optionsArray = [ ...options.children ];
       optionsArray.forEach( ( opt ) => {
@@ -383,6 +380,9 @@ function loadDolls () {
 
       //clear the applied options
       renderAppliedOptionsList();
+      //re draw the current doll
+      currentDoll.draw();
+
     } );
 
     dollsUl.appendChild( dollOption );
