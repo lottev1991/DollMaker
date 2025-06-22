@@ -322,7 +322,11 @@ toggleMultiselectBtn.addEventListener( "click", () => {
     //remove all the previous options in the ui
     var optionsArray = [ ...options.children ];
     optionsArray.forEach( ( option ) => {
-      option.classList.remove( "clickedOption" );
+      if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
+        opt.classList.add( "clickedOption" );
+      } else {
+        opt.classList.remove( "clickedOption" );
+      }
     } );
 
     //remove all the previous options in the doll object
@@ -418,11 +422,7 @@ createNewDollCard.addEventListener( "click", () => {
   //clear the selected options in the ui
   var optionsArray = [ ...options.children ];
   optionsArray.forEach( ( opt ) => {
-    if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
-      opt.classList.add( "clickedOption" );
-    } else {
-      opt.classList.remove( "clickedOption" );
-    }
+    opt.classList.remove( "clickedOption" );
   } );
 
   //clear the applied options
