@@ -256,10 +256,10 @@ categories.forEach( ( cat, index ) => {
               //remove all the previous options in the ui
               var optionsArray = [ ...options.children ];
               optionsArray.forEach( ( option ) => {
-                if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
-                  opt.classList.add( "clickedOption" );
+                if ( currentDoll.hasOption( currentCategory, option.firstChild ) ) {
+                  option.classList.add( "clickedOption" );
                 } else {
-                  opt.classList.remove( "clickedOption" );
+                  option.classList.remove( "clickedOption" );
                 }
               } );
 
