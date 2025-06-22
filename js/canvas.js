@@ -256,11 +256,11 @@ categories.forEach( ( cat, index ) => {
               //remove all the previous options in the ui
               var optionsArray = [ ...options.children ];
               optionsArray.forEach( ( option ) => {
-                if ( currentDoll.hasOption( currentCategory, option.firstChild ) ) {
+                //if ( currentDoll.hasOption( currentCategory, option.firstChild ) ) {
                   option.classList.add( "clickedOption" );
-                } else {
-                  option.classList.remove( "clickedOption" );
-                }
+                //} else {
+                //  option.classList.remove( "clickedOption" );
+                //}
               } );
 
               //remove all the previous options in the doll object because we can only select 1
