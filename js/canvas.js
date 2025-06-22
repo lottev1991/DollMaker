@@ -30,6 +30,9 @@ var currentDoll;
 //   .catch(err => console.log(err))
 
 // while()
+
+document.addEventListener( 'contextmenu', event => event.preventDefault() );
+
 class Doll {
   constructor() {
     this.options = [];
