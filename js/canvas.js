@@ -191,13 +191,9 @@ window.addEventListener("resize", () => {
 categories.forEach((cat, index) => {
   cat.addEventListener("click", (cat) => {
     //add animation
-    cat.target.classList.remove( 'transform-after' );
-    cat.target.classList.add('transform-before');
-    //cat.target.style.transform = "scale(1.05)";
-    setTimeout( () => {
-      cat.target.classList.remove( 'transform-before' );
-      cat.target.classList.add( 'transform-after' );
-      //cat.target.style.transform = "scale(1)";
+    cat.target.style.transform = "scale(1.05)";
+    setTimeout(() => {
+      cat.target.style.transform = "scale(1)";
     }, 200);
     // make sure my options element is visisble again
     options.parentElement.style.visibility = "visible";
@@ -229,13 +225,9 @@ categories.forEach((cat, index) => {
         //add click listener on option.firstchild so the li isn't accidentally clicked
         option.firstChild.addEventListener("click", (clickedOption) => {
           //add animation
-          option.target.classList.remove( 'transform-after' );
-          option.target.classList.add( 'transform-before' );
-          //option.style.transform = "scale(1.05)";
+          option.style.transform = "scale(1.05)";
           setTimeout(() => {
-            //option.style.transform = "scale(1)";
-            option.target.classList.remove( 'transform-before' );
-            option.target.classList.add( 'transform-after' );
+            option.style.transform = "scale(1)";
           }, 200);
 
           if (
@@ -296,11 +288,9 @@ categories.forEach((cat, index) => {
 exportCanvasBtn.addEventListener("click", () => exportCanvas());
 function exportCanvas() {
   //add animation
-  exportCanvasBtn.classList.remove( 'transform-after' );
-  exportCanvasBtn.classList.add('transform-before');
-  setTimeout( () => {
-    exportCanvasBtn.classList.remove( 'transform-before' );
-    exportCanvasBtn.classList.add( 'transform-after' );
+  exportCanvasBtn.style.transform = "scale(1.05)";
+  setTimeout(() => {
+    exportCanvasBtn.style.transform = "scale(1)";
   }, 200);
 
   //this will export the canvas to a Data URl that can be downloaded
@@ -317,12 +307,10 @@ function exportCanvas() {
 
 toggleMultiselectBtn.addEventListener("click", () => {
   //add animation
-  toggleMultiselectBtn.classList.remove( 'transform-after' );
-  toggleMultiselectBtn.classList.add( 'transform-before' );
-  setTimeout( () => {
-    toggleMultiselectBtn.classList.remove( 'transform-before' );
-    toggleMultiselectBtn.classList.add( 'transform-after' );
-  }, 200 );
+  toggleMultiselectBtn.style.transform = "scale(1.05)";
+  setTimeout(() => {
+    toggleMultiselectBtn.style.transform = "scale(1)";
+  }, 200);
   toggleMultiselectBtn.classList.toggle("active");
 
   if (toggleMultiselectBtn.classList.contains("active")) {
@@ -368,13 +356,9 @@ function loadDolls() {
 
     dollOption.addEventListener("click", (clickedDoll) => {
       //add animation
-      dollOption.classList.remove( 'transform-after' );
-      dollOption.classList.add('transform-before');
-      //dollOption.style.transform = "scale(1.05)";
+      dollOption.style.transform = "scale(1.05)";
       setTimeout(() => {
-        // dollOption.style.transform = "scale(1)";
-        dollOption.classList.remove( 'transform-before' );
-        dollOption.classList.add( 'transform-after' );
+        dollOption.style.transform = "scale(1)";
       }, 200);
       setTimeout(() => {
         // Close modal
