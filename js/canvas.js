@@ -418,7 +418,7 @@ createNewDollCard.addEventListener("click", () => {
   //clear the selected options in the ui
   var optionsArray = [...options.children];
   optionsArray.forEach((opt) => {
-    opt.classList.remove("clickedOption");
+    opt.classList.toggle("clickedOption");
   });
 
   //clear the applied options
