@@ -194,7 +194,7 @@ categories.forEach((cat, index) => {
     cat.target.style.transform = "scale(1.05)";
     setTimeout(() => {
       cat.target.style.transform = "scale(1)";
-    }, 1);
+    }, 200);
     // make sure my options element is visisble again
     options.parentElement.style.visibility = "visible";
 
@@ -228,7 +228,7 @@ categories.forEach((cat, index) => {
           option.style.transform = "scale(1.05)";
           setTimeout(() => {
             option.style.transform = "scale(1)";
-          }, 1);
+          }, 200);
 
           if (
             clickedOption.target.parentNode.classList.contains("clickedOption")
@@ -291,7 +291,7 @@ function exportCanvas() {
   exportCanvasBtn.style.transform = "scale(1.05)";
   setTimeout(() => {
     exportCanvasBtn.style.transform = "scale(1)";
-  }, 1);
+  }, 200);
 
   //this will export the canvas to a Data URl that can be downloaded
   canvasDataURL = canvas.toDataURL("png", 1.0);
@@ -310,7 +310,7 @@ toggleMultiselectBtn.addEventListener("click", () => {
   toggleMultiselectBtn.style.transform = "scale(1.05)";
   setTimeout(() => {
     toggleMultiselectBtn.style.transform = "scale(1)";
-  }, 1);
+  }, 200);
   toggleMultiselectBtn.classList.toggle("active");
 
   if (toggleMultiselectBtn.classList.contains("active")) {
@@ -359,11 +359,11 @@ function loadDolls() {
       dollOption.style.transform = "scale(1.05)";
       setTimeout(() => {
         dollOption.style.transform = "scale(1)";
-      }, 1);
+      }, 200);
       setTimeout(() => {
         // Close modal
         modal.style.display = "none";
-      }, 1);
+      }, 400);
 
       //switch doll
       currentDoll = dolls[index];
@@ -396,7 +396,7 @@ saveDollsBtn.addEventListener("click", () => {
 
   setTimeout(() => {
     saveDollsBtn.innerText = "Save Dolls";
-  }, 1);
+  }, 3000);
 });
 
 function removeDollsUlChildren() {
