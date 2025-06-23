@@ -258,12 +258,12 @@ categories.forEach((cat, index) => {
               currentDoll.removeAllOptionsFromCategory(currentCategory);
 
               //add the new clicked option in the ui
-              clickedOption.target.parentNode.classList.add( "clickedOption" );
+              clickedOption.target.parentNode.classList.toggle("clickedOption");
               
               //remove all the previous options in the ui
-              var optionsArray = [ ...options.children ];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove( "clickedOption" );
+              var optionsArray = [...options.children];
+              optionsArray.forEach((option) => {
+                option.classList.remove("clickedOption");
               } );
 
               //add the new clicked option in the doll object
