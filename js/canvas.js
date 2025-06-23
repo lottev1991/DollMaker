@@ -245,7 +245,7 @@ categories.forEach((cat, index) => {
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
               try {
-                $( clickedOption.target ).parent().toggleClass( "clickedOption" );
+                clickedOption.target.parentNode.classList.toggle("clickedOption");
               } catch ( e ) {
                 console.error( e );
               }
@@ -269,7 +269,7 @@ categories.forEach((cat, index) => {
 
               //add the new clicked option in the ui
               try {
-                $( clickedOption.target).parent().toggleClass( "clickedOption" );
+                clickedOption.target.parentNode.classList.toggle("clickedOption");
               } catch ( e ) {
                 console.error( e );
               }
