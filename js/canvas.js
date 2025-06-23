@@ -246,8 +246,8 @@ categories.forEach((cat, index) => {
             if ( toggleMultiselect ) {
               if ( clickedOption.target.parentNode.classList.contains( "clickedOptions") ) {
                 clickedOption.target.parentNode.classList.remove("clickedOption");
-              } else {
-                clickedOption.target.parentNode.classList.add("clickedOption");
+              // } else {
+              //   clickedOption.target.parentNode.classList.add("clickedOption");
               }
 
               // clickedOption.target should show my image src but is not ideal
@@ -269,8 +269,8 @@ categories.forEach((cat, index) => {
               //add the new clicked option in the ui
               if ( clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
                 clickedOption.target.parentNode.classList.remove( "clickedOption" );
-              } else {
-                clickedOption.target.parentNode.classList.add( "clickedOption" );
+              // } else {
+              //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               }
 
               //add the new clicked option in the doll object
