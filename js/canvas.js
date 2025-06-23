@@ -243,8 +243,12 @@ categories.forEach((cat, index) => {
             // Select a new option
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
-            if (toggleMultiselect) {
-              clickedOption.target.parentNode.classList.toggle("clickedOption");
+            if ( toggleMultiselect ) {
+              if (clickedOption.target.parentNode.classlist.containes( "clickedOptions") ) {
+                clickedOption.target.parentNode.classList.remove("clickedOption");
+              } else {
+                clickedOption.target.parentNode.classList.add("clickedOption");
+              }
 
               // clickedOption.target should show my image src but is not ideal
               // and should be replaced with something else, when title is clicked
@@ -253,18 +257,21 @@ categories.forEach((cat, index) => {
               currentDoll.addOption(newOption);
 
             } else {
-
-              //remove all the previous options in the doll object because we can only select 1
-              currentDoll.removeAllOptionsFromCategory(currentCategory);
-
-              //add the new clicked option in the ui
-              clickedOption.target.parentNode.classList.toggle("clickedOption");
-              
               //remove all the previous options in the ui
               var optionsArray = [...options.children];
               optionsArray.forEach((option) => {
                 option.classList.remove("clickedOption");
               } );
+
+              //remove all the previous options in the doll object because we can only select 1
+              currentDoll.removeAllOptionsFromCategory(currentCategory);
+
+              //add the new clicked option in the ui
+              if ( clickedOption.target.parentNode.classlist.containes( "clickedOptions" ) ) {
+                clickedOption.target.parentNode.classList.remove( "clickedOption" );
+              } else {
+                clickedOption.target.parentNode.classList.add( "clickedOption" );
+              }
 
               //add the new clicked option in the doll object
               var newOption = new Option(currentCategory, clickedOption.target);
