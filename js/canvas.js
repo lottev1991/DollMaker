@@ -218,7 +218,7 @@ categories.forEach((cat, index) => {
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
         if (currentDoll.hasOption(currentCategory, image)) {
-          option.classList.add("clickedOption");
+          option.classList.add("clickedSubOption");
         }
         option.appendChild(image);
 
@@ -231,11 +231,11 @@ categories.forEach((cat, index) => {
           }, 200);
 
           if (
-            clickedOption.target.parentNode.classList.contains("clickedOption")
+            clickedOption.target.parentNode.classList.contains("clickedSubOption")
           ) {
             //Option is already selected, remove it
 
-            clickedOption.target.parentNode.classList.toggle("clickedOption");
+            clickedOption.target.parentNode.classList.toggle("clickedSubOption");
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
