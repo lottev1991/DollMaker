@@ -39,12 +39,7 @@
   visibility: hidden;
 }
 
-.clickedOption {
-  border: 3px solid black;
-  background-color: pink;
-}
-
-.clickedSubOption {
+.clickedOption, .clickedSubOption, .clickedSubOptionMulti {
   border: 3px solid black;
   background-color: pink;
 }
