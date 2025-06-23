@@ -244,7 +244,7 @@ categories.forEach((cat, index) => {
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
-              if ( clickedOption.target.parentNode.classList.contains( "clickedOptions") ) {
+              if ( clickedOption.target.parentNode.classList.contains( "clickedOption") ) {
                 clickedOption.target.parentNode.classList.remove("clickedOption");
               // } else {
               //   clickedOption.target.parentNode.classList.add("clickedOption");
@@ -256,11 +256,11 @@ categories.forEach((cat, index) => {
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
               
-              //if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
-                //clickedOption.target.parentNode.classList.add( "clickedOption" );
+              if ( !clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
+                clickedOption.target.parentNode.classList.add( "clickedOption" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
-              //}
+              }
 
             } else {
               //remove all the previous options in the ui
@@ -273,7 +273,7 @@ categories.forEach((cat, index) => {
               currentDoll.removeAllOptionsFromCategory(currentCategory);
 
               //add the new clicked option in the ui
-              if ( clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
+              if ( clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
                 clickedOption.target.parentNode.classList.remove( "clickedOption" );
               // } else {
               //   clickedOption.target.parentNode.classList.add( "clickedOption" );
@@ -284,11 +284,11 @@ categories.forEach((cat, index) => {
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
               
-              //if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
-                //clickedOption.target.parentNode.classList.add( "clickedOption" );
+              if ( !clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
+                clickedOption.target.parentNode.classList.add( "clickedOption" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
-              //}
+              }
             }
 
             currentDoll.draw();
