@@ -256,11 +256,11 @@ categories.forEach((cat, index) => {
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
               
-              if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
-                clickedOption.target.parentNode.classList.add( "clickedOption" );
+              //if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
+                //clickedOption.target.parentNode.classList.add( "clickedOption" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
-              }
+              //}
 
             } else {
               //remove all the previous options in the ui
@@ -284,11 +284,11 @@ categories.forEach((cat, index) => {
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
               
-              if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
-                clickedOption.target.parentNode.classList.add( "clickedOption" );
+              //if ( !clickedOption.target.parentNode.classList.contains( "clickedOptions" ) ) {
+                //clickedOption.target.parentNode.classList.add( "clickedOption" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
-              }
+              //}
             }
 
             currentDoll.draw();
