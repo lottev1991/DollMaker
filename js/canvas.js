@@ -218,12 +218,7 @@ categories.forEach((cat, index) => {
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
         if ( currentDoll.hasOption( currentCategory, image ) ) {
-          
-          if ( toggleMultiselect ) {
-            option.classList.add( "clickedSubOptionMulti" );
-          } else {
-            option.classList.add( "clickedSubOption" );
-          }
+          option.classList.add( "clickedSubOption" );
         }
         option.appendChild(image);
 
