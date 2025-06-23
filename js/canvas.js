@@ -223,7 +223,7 @@ categories.forEach((cat, index) => {
         option.appendChild(image);
 
         //add click listener on option.firstchild so the li isn't accidentally clicked
-        option.firstChild.addEventListener("toggle", (clickedOption) => {
+        option.firstChild.addEventListener("click", (clickedOption) => {
           //add animation
           option.style.transform = "scale(1.05)";
           setTimeout(() => {
