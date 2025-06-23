@@ -244,6 +244,11 @@ categories.forEach((cat, index) => {
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
+              var optionsArray = [ ...options.children ];
+              optionsArray.forEach( ( option ) => {
+                option.classList.remove( "clickedSubOption" );
+              } );
+              
               clickedOption.target.parentNode.classList.toggle("clickedSubOptionMulti");
               
               // clickedOption.target should show my image src but is not ideal
