@@ -245,7 +245,7 @@ categories.forEach((cat, index) => {
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
               //if ( clickedOption.target.parentNode.classList.contains( "clickedOption") ) {
-                clickedOption.target.parentNode.classList.remove("clickedOption2");
+                clickedOption.target.parentNode.classList.toggle("clickedOption2");
               // } else {
               //   clickedOption.target.parentNode.classList.add("clickedOption");
               //}
@@ -257,7 +257,7 @@ categories.forEach((cat, index) => {
               currentDoll.addOption( newOption );
               
               //if ( !clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
-                clickedOption.target.parentNode.classList.add( "clickedOption2" );
+                //clickedOption.target.parentNode.classList.add( "clickedOption2" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               //}
@@ -274,7 +274,7 @@ categories.forEach((cat, index) => {
 
               //add the new clicked option in the ui
               //if ( clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
-                clickedOption.target.parentNode.classList.remove( "clickedOption2" );
+                clickedOption.target.parentNode.classList.toggle( "clickedOption2" );
               // } else {
               //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               //}
@@ -285,7 +285,7 @@ categories.forEach((cat, index) => {
               currentDoll.addOption( newOption );
               
               //if ( !clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
-                clickedOption.target.parentNode.classList.add( "clickedOption2" );
+                //clickedOption.target.parentNode.classList.add( "clickedOption2" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               //}
