@@ -253,7 +253,11 @@ categories.forEach((cat, index) => {
               currentDoll.addOption(newOption);
 
             } else {
-              
+              //remove all the previous options in the ui
+              var optionsArray = [...options.children];
+              optionsArray.forEach((option) => {
+                option.classList.remove("clickedOption");
+              });
 
               //remove all the previous options in the doll object because we can only select 1
               currentDoll.removeAllOptionsFromCategory(currentCategory);
@@ -263,13 +267,7 @@ categories.forEach((cat, index) => {
 
               //add the new clicked option in the doll object
               var newOption = new Option(currentCategory, clickedOption.target);
-              currentDoll.addOption( newOption );
-
-              //remove all the previous options in the ui
-              var optionsArray = [ ...options.children ];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove( "clickedOption" );
-              } );
+              currentDoll.addOption(newOption);
             }
 
             currentDoll.draw();
@@ -412,16 +410,16 @@ createNewDollCard.addEventListener("click", () => {
   modal.style.display = "none";
 
   currentDoll = new Doll();
-  dolls.push( currentDoll );
-  
-  //clear the selected options in the ui
-  var optionsArray = [ ...options.children ];
-  optionsArray.forEach( ( opt ) => {
-    opt.classList.remove( "clickedOption" );
-  } );
+  dolls.push(currentDoll);
 
   //re draw the current doll
   currentDoll.draw();
+
+  //clear the selected options in the ui
+  var optionsArray = [...options.children];
+  optionsArray.forEach((opt) => {
+    opt.classList.remove("clickedOption");
+  });
 
   //clear the applied options
   renderAppliedOptionsList()
