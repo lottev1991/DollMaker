@@ -218,7 +218,7 @@ categories.forEach((cat, index) => {
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
         if (currentDoll.hasOption(currentCategory, image)) {
-          option.classList.add("clickedSubOption");
+          option.classList.add("clickedOption");
         }
         option.appendChild(image);
 
