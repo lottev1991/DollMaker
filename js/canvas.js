@@ -255,7 +255,13 @@ categories.forEach((cat, index) => {
             } else {
 
               //remove all the previous options in the doll object because we can only select 1
-              currentDoll.removeAllOptionsFromCategory(currentCategory);
+              currentDoll.removeAllOptionsFromCategory( currentCategory );
+              
+              //remove all the previous options in the ui
+              var optionsArray = [ ...options.children ];
+              optionsArray.forEach( ( option ) => {
+                option.classList.remove( "clickedOption" );
+              } );
 
               //add the new clicked option in the ui
               clickedOption.target.parentNode.classList.toggle("clickedOption");
@@ -264,11 +270,7 @@ categories.forEach((cat, index) => {
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
               
-              //remove all the previous options in the ui
-              var optionsArray = [ ...options.children ];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove( "clickedOption" );
-              } );
+
             }
 
             currentDoll.draw();
