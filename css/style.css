@@ -39,9 +39,9 @@
   visibility: hidden;
 }
 
-.clickedOption, .clickedSubOption {
-  border: 3px solid black;
-  background-color: pink;
+.clickedOption {
+  border: 3px solid black !important;
+  background-color: pink !important;
 }
 
 .options ul {
