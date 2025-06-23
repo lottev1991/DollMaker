@@ -231,11 +231,11 @@ categories.forEach((cat, index) => {
           }, 200);
 
           if (
-            clickedOption.target.parentNode.classList.contains("clickedOption")
+            clickedOption.target.parentNode.classList.contains("clickedOption2")
           ) {
             //Option is already selected, remove it
 
-            clickedOption.target.parentNode.classList.toggle("clickedOption");
+            clickedOption.target.parentNode.classList.toggle("clickedOption2");
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
