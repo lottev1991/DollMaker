@@ -368,22 +368,21 @@ function loadDolls() {
       //switch doll
       currentDoll = dolls[index];
 
-      //clear the selected options in the ui and select the options in the currentdoll
-      var optionsArray = [...options.children];
-      optionsArray.forEach((opt) => {
-        if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
-          opt.classList.add("clickedOption");
-        } else {
-          opt.classList.remove("clickedOption");
-        }
-      });
+      //re draw the current doll
+      currentDoll.draw();
 
       //clear the applied options
       renderAppliedOptionsList()
 
-
-      //re draw the current doll
-      currentDoll.draw();
+      //clear the selected options in the ui and select the options in the currentdoll
+      var optionsArray = [ ...options.children ];
+      optionsArray.forEach( ( opt ) => {
+        if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
+          opt.classList.add( "clickedOption" );
+        } else {
+          opt.classList.remove( "clickedOption" );
+        }
+      } );
     });
 
     dollsUl.appendChild(dollOption);
@@ -416,14 +415,14 @@ createNewDollCard.addEventListener("click", () => {
   //re draw the current doll
   currentDoll.draw();
 
-  //clear the selected options in the ui
-  var optionsArray = [...options.children];
-  optionsArray.forEach((opt) => {
-    opt.classList.remove("clickedOption");
-  });
-
   //clear the applied options
   renderAppliedOptionsList()
+
+  //clear the selected options in the ui
+  var optionsArray = [ ...options.children ];
+  optionsArray.forEach( ( opt ) => {
+    opt.classList.remove( "clickedOption" );
+  } );
 });
 
 deleteAllDollsCard.addEventListener("click", () => {
