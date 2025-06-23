@@ -235,7 +235,8 @@ categories.forEach((cat, index) => {
           ) {
             //Option is already selected, remove it
 
-            clickedOption.target.parentNode.classList.toggle("clickedOption");
+            clickedOption.target.parentNode.classList.toggle( "clickedOption" );
+            clickedOption.target.parentNode.classList.toggle( "clickedOptionMulti" );
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
@@ -246,7 +247,6 @@ categories.forEach((cat, index) => {
             if ( toggleMultiselect ) {
               
               clickedOption.target.parentNode.classList.toggle( "clickedSubOption" );
-              clickedOption.target.parentNode.classList.toggle( "clickedOption" );
               
               // clickedOption.target should show my image src but is not ideal
               // and should be replaced with something else, when title is clicked
