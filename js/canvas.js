@@ -253,6 +253,12 @@ categories.forEach((cat, index) => {
               currentDoll.addOption(newOption);
 
             } else {
+              // //remove all the previous options in the ui
+              // var optionsArray = [...options.children];
+              // optionsArray.forEach((option) => {
+              //   option.classList.remove("clickedOption");
+              // });
+
               //remove all the previous options in the doll object because we can only select 1
               currentDoll.removeAllOptionsFromCategory(currentCategory);
 
@@ -261,14 +267,7 @@ categories.forEach((cat, index) => {
 
               //add the new clicked option in the doll object
               var newOption = new Option(currentCategory, clickedOption.target);
-              currentDoll.addOption( newOption );
-              
-              //remove all the previous options in the ui
-              var optionsArray = [ ...options.children ];
-              optionsArray.forEach( ( option ) => {
-                option.classList.remove( "clickedOption" );
-              } );
-
+              currentDoll.addOption(newOption);
             }
 
             currentDoll.draw();
@@ -319,17 +318,17 @@ toggleMultiselectBtn.addEventListener("click", () => {
   } else {
     toggleMultiselect = false;
 
+    //clear all the previous selected elements
+    //remove all the previous options in the ui
+    var optionsArray = [...options.children];
+    optionsArray.forEach((option) => {
+      option.classList.remove("clickedOption");
+    });
+
     //remove all the previous options in the doll object
     currentDoll.removeAllOptionsFromCategory(currentCategory);
 
     currentDoll.draw();
-
-    //clear all the previous selected elements
-    //remove all the previous options in the ui
-    var optionsArray = [ ...options.children ];
-    optionsArray.forEach( ( option ) => {
-      option.classList.remove( "clickedOption" );
-    } );
   }
 });
 
@@ -372,18 +371,18 @@ function loadDolls() {
       //re draw the current doll
       currentDoll.draw();
 
+      //clear the selected options in the ui and select the options in the currentdoll
+      var optionsArray = [...options.children];
+      optionsArray.forEach((opt) => {
+        if (currentDoll.hasOption(currentCategory, opt.firstChild)) {
+          opt.classList.add("clickedOption");
+        } else {
+          opt.classList.remove("clickedOption");
+        }
+      });
+
       //clear the applied options
       renderAppliedOptionsList()
-
-      //clear the selected options in the ui and select the options in the currentdoll
-      var optionsArray = [ ...options.children ];
-      optionsArray.forEach( ( opt ) => {
-        if ( currentDoll.hasOption( currentCategory, opt.firstChild ) ) {
-          opt.classList.add( "clickedOption" );
-        } else {
-          opt.classList.remove( "clickedOption" );
-        }
-      } );
     });
 
     dollsUl.appendChild(dollOption);
@@ -416,14 +415,14 @@ createNewDollCard.addEventListener("click", () => {
   //re draw the current doll
   currentDoll.draw();
 
+  //clear the selected options in the ui
+  var optionsArray = [...options.children];
+  optionsArray.forEach((opt) => {
+    opt.classList.remove("clickedOption");
+  });
+
   //clear the applied options
   renderAppliedOptionsList()
-
-  //clear the selected options in the ui
-  var optionsArray = [ ...options.children ];
-  optionsArray.forEach( ( opt ) => {
-    opt.classList.remove( "clickedOption" );
-  } );
 });
 
 deleteAllDollsCard.addEventListener("click", () => {
