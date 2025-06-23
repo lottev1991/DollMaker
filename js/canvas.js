@@ -321,16 +321,16 @@ toggleMultiselectBtn.addEventListener("click", () => {
     toggleMultiselect = false;
 
     //remove all the previous options in the doll object
-    currentDoll.removeAllOptionsFromCategory(currentCategory);
-
-    currentDoll.draw();
-
+    currentDoll.removeAllOptionsFromCategory( currentCategory );
+    
     //clear all the previous selected elements
     //remove all the previous options in the ui
     var optionsArray = [ ...options.children ];
     optionsArray.forEach( ( option ) => {
       option.classList.remove( "clickedOption" );
     } );
+
+    currentDoll.draw();
   }
 });
 
