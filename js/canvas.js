@@ -244,7 +244,7 @@ categories.forEach((cat, index) => {
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
-              clickedOption.target.parentNode.classList.toggle("clickedSubOptionMulti");
+              clickedOption.target.parentNode.classList.toggle("clickedSubOption");
               
               // clickedOption.target should show my image src but is not ideal
               // and should be replaced with something else, when title is clicked
