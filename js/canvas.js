@@ -266,7 +266,7 @@ categories.forEach((cat, index) => {
               //remove all the previous options in the ui
               var optionsArray = [...options.children];
               optionsArray.forEach((option) => {
-                option.classList.remove("clickedOption");
+                option.classList.remove("clickedOption2");
               } );
 
               //remove all the previous options in the doll object because we can only select 1
@@ -274,7 +274,7 @@ categories.forEach((cat, index) => {
 
               //add the new clicked option in the ui
               //if ( clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
-                clickedOption.target.parentNode.classList.toggle( "clickedOption2" );
+                clickedOption.target.parentNode.classList.remove( "clickedOption2" );
               // } else {
               //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               //}
@@ -285,7 +285,7 @@ categories.forEach((cat, index) => {
               currentDoll.addOption( newOption );
               
               //if ( !clickedOption.target.parentNode.classList.contains( "clickedOption" ) ) {
-                //clickedOption.target.parentNode.classList.add( "clickedOption2" );
+                clickedOption.target.parentNode.classList.add( "clickedOption2" );
                 // } else {
                 //   clickedOption.target.parentNode.classList.add( "clickedOption" );
               //}
