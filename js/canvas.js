@@ -217,8 +217,8 @@ categories.forEach((cat, index) => {
         var image = document.createElement("img");
         image.src = `./images/${currentCategory.toLowerCase()}/${index}.png`;
 
-        if ( currentDoll.hasOption( currentCategory, image ) ) {
-          option.classList.add( "clickedSubOption" );
+        if (currentDoll.hasOption(currentCategory, image)) {
+          option.classList.add("clickedOption");
         }
         option.appendChild(image);
 
@@ -235,8 +235,7 @@ categories.forEach((cat, index) => {
           ) {
             //Option is already selected, remove it
 
-            clickedOption.target.parentNode.classList.toggle( "clickedOption" );
-            clickedOption.target.parentNode.classList.toggle( "clickedSubOption" );
+            clickedOption.target.parentNode.classList.toggle("clickedOption");
             removeOption = new Option(currentCategory, clickedOption.target);
             currentDoll.removeOption(removeOption);
             currentDoll.draw();
@@ -244,31 +243,33 @@ categories.forEach((cat, index) => {
             // Select a new option
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
-            if ( toggleMultiselect ) {
-              
-              clickedOption.target.parentNode.classList.toggle( "clickedSubOption", "clickedOption" );
-              
+            if (toggleMultiselect) {
+
               // clickedOption.target should show my image src but is not ideal
               // and should be replaced with something else, when title is clicked
               // => error
               var newOption = new Option(currentCategory, clickedOption.target);
               currentDoll.addOption( newOption );
+              
+              clickedOption.target.parentNode.classList.toggle( "clickedOption" );
 
             } else {
               //remove all the previous options in the ui
               var optionsArray = [...options.children];
               optionsArray.forEach((option) => {
-                option.classList.remove("clickedSubOption");
-              } );
+                option.classList.remove("clickedOption");
+              });
 
               //remove all the previous options in the doll object because we can only select 1
               currentDoll.removeAllOptionsFromCategory(currentCategory);
 
-              clickedOption.target.parentNode.classList.toggle("clickedSubOption");
+              //add the new clicked option in the ui
 
               //add the new clicked option in the doll object
               var newOption = new Option(currentCategory, clickedOption.target);
-              currentDoll.addOption(newOption);
+              currentDoll.addOption( newOption );
+              
+              clickedOption.target.parentNode.classList.toggle( "clickedOption" );
             }
 
             currentDoll.draw();
