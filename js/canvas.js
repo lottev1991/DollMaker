@@ -412,19 +412,19 @@ createNewDollCard.addEventListener("click", () => {
   modal.style.display = "none";
 
   currentDoll = new Doll();
-  dolls.push(currentDoll);
+  dolls.push( currentDoll );
+  
+  //clear the selected options in the ui
+  var optionsArray = [ ...options.children ];
+  optionsArray.forEach( ( opt ) => {
+    opt.classList.remove( "clickedOption" );
+  } );
 
   //re draw the current doll
   currentDoll.draw();
 
   //clear the applied options
   renderAppliedOptionsList()
-
-  //clear the selected options in the ui
-  var optionsArray = [ ...options.children ];
-  optionsArray.forEach( ( opt ) => {
-    opt.classList.remove( "clickedOption" );
-  } );
 });
 
 deleteAllDollsCard.addEventListener("click", () => {
