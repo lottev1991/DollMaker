@@ -244,11 +244,8 @@ categories.forEach((cat, index) => {
 
             //If toggleMultiselect is false we first remove all the other options and then add the new option
             if ( toggleMultiselect ) {
-              try {
-                clickedOption.target.parentNode.classList.toggle("clickedOption");
-              } catch ( e ) {
-                console.error( e );
-              }
+              clickedOption.target.parentNode.classList.toggle( "clickedOption" );
+              clickedOption.preventDefault();
               
 
               // clickedOption.target should show my image src but is not ideal
@@ -268,11 +265,8 @@ categories.forEach((cat, index) => {
               currentDoll.removeAllOptionsFromCategory(currentCategory);
 
               //add the new clicked option in the ui
-              try {
-                clickedOption.target.parentNode.classList.toggle("clickedOption");
-              } catch ( e ) {
-                console.error( e );
-              }
+              clickedOption.target.parentNode.classList.toggle( "clickedOption" );
+              clickedOption.preventDefault();
 
               //add the new clicked option in the doll object
               var newOption = new Option(currentCategory, clickedOption.target);
